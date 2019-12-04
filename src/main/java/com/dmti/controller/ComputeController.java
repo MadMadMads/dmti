@@ -18,17 +18,17 @@ public class ComputeController {
 
     @ResponseBody
     @RequestMapping("/compute")
-    private Object compute() {
+    public Object compute() {
         return computeservice.computeBackData();
     }
     @ResponseBody
     @RequestMapping("/computeCommentTime")
-    private Object computeCommentTime() {
+    public Object computeCommentTime() {
         return computeservice.computeCommentTime();
     }
     @ResponseBody
     @RequestMapping("/computeUserAgesComment")
-    private Object computeUserAgesComment() {
+    public Object computeUserAgesComment() {
         return computeservice.computeUserAgesComment();
     }
 }
