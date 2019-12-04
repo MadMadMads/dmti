@@ -25,7 +25,8 @@ public class ComputeController {
     @RequestMapping("/computeCommentTime")
     private Object computeCommentTime() {
         return computeservice.computeCommentTime();
-    }    @ResponseBody
+    }
+    @ResponseBody
     @RequestMapping("/computeUserAgesComment")
     private Object computeUserAgesComment() {
         return computeservice.computeUserAgesComment();
