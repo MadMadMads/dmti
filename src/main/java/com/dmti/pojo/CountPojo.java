@@ -1,9 +1,5 @@
 package com.dmti.pojo;
 
-/**
- * @auther XuJun
- * @date 2019/12/5 21:40
- */
 public class CountPojo {
     private String name;
     private Integer count;

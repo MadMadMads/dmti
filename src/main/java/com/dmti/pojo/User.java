@@ -1,9 +1,5 @@
 package com.dmti.pojo;
 
-/**
- * @auther XuJun
- * @date 2019/12/5 16:18
- */
 public class User {
     private int id;
     private String name;
