@@ -9,6 +9,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -82,5 +84,13 @@ public class ComputeController {
     public Object pageQuerySongs(@RequestParam(name="offset",defaultValue = "1") int offset,@RequestParam(name = "limit",defaultValue = "100") int limit,@RequestParam(name="search",defaultValue = "") String search) {
         PageList pageList = pageQueryService.pageQuerySongs(offset,limit,search);
         return pageList;
+    }
+
+    @PostMapping("/addHotSong")
+    public void addHotSong(HttpServletResponse response, @RequestParam("songName") String songName, @RequestParam("songID") int songID, @RequestParam("singerName") String singerName, @RequestParam("totcalComents") int totcalComents) throws IOException {
+        Integer res = pageQueryService.addHotSong(songName, songID, singerName, totcalComents);
+        if (res > 0 ){
+            response.getWriter().print("<script>window.location.href='/index.html'</script>");
+        }
     }
 }

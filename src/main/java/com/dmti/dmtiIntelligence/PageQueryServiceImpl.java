@@ -86,6 +86,11 @@ public class PageQueryServiceImpl implements PageQueryService {
         return pageList;
     }
 
+    @Override
+    public Integer addHotSong(String songName, Integer songID, String singerName, Integer totcalComents) {
+        return jdbcTemplate.update("insert into hotsongs(songID,songName,singerName,totcalComents) values(?,?,?,?)", songID, songName, singerName, totcalComents);
+    }
+
 
     public Integer computeOffset(Integer offset,Integer limit) {
         Integer number = offset / limit + 1 ;

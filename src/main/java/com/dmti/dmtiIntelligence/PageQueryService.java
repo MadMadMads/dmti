@@ -39,4 +39,6 @@ public interface PageQueryService {
      * @return
      */
     PageList pageQuerySongs(int offset, int limit, String search);
+
+    Integer addHotSong(String songName,Integer songID,String singerName,Integer totcalComents);
 }
