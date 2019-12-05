@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN" >
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>网易云歌曲评论管理</title>
+
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="fonts/FontAwesome/font-awesome.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet"><!-- 动画效果 -->
+		<link href="css/bootsnav.css" rel="stylesheet">
+		<link href="css/index.css" rel="stylesheet">
+		<link href="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.css" rel="stylesheet">
+
+
+	</head>
+	<body>
+		<!-- Start Navigation -->
+	    <nav class="navbar navbar-default navbar-mobile bootsnav" >
+	        <!-- Start Top Search -->
+	        <div class="top-search">
+	            <div class="container">
+	                <div class="input-group">
+	                    <span class="input-group-addon" ><i class="fa fa-search"></i></span>
+	                    <input type="text" id="keyword" class="form-control" placeholder="Please input you want to find , then hit enter to begin">
+	                    <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- End Top Search -->
+	        <div class="container">
+	            <!-- Start Atribute Navigation -->
+	            <div class="attr-nav">
+	                <ul>
+	                    <li class="search"><a href="#"><i class="fa fa-search fa-lg"></i></a></li>
+	                </ul>
+	            </div>
+	            <!-- End Atribute Navigation -->
+	            <!-- Start Header Navigation -->
+	            <div class="navbar-header">
+	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+	                    <i class="fa fa-bars"></i>
+	                </button>
+	                <a class="navbar-brand" href="#brand"><img src="img/logo/logo.png" class="logo" alt=""></a>
+	            </div>
+	            <!-- End Header Navigation -->
+	            <!-- Collect the nav links, forms, and other content for toggling -->
+	            <div class="collapse navbar-collapse" id="navbar-menu">
+	                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+	                    <li><a href="index.html">首页</a></li>
+	                    <li><a href="hotsongs.html">热门歌曲</a></li>
+	                    <li><a href="list.html">热门评论</a></li>
+	                    <li><a href="about.html">热门歌单</a></li>
+	                    <li><a href="about.html">歌单歌曲</a></li>
+	                </ul>
+	            </div><!-- /.navbar-collapse -->
+	        </div>
+	    </nav>
+	    <!-- End Navigation -->
+		<div class="container" style="height: 800px">
+			<div class="row mainbody">
+				<div class="table-responsive">
+  					<table
+				  id="table"
+				  data-toggle="table"
+				  data-url="http://127.0.0.1/pageQueryComments"
+				  data-height="600"
+				  data-side-pagination="server"
+				  data-pagination="true"
+				  data-page-size="200">
+				  <thead>
+				    <tr>
+				      <th data-field="userId">评论用户ID</th>
+				      <th data-field="content">评论内容</th>
+				      <th data-field="songID">歌曲名字</th>
+				       <th data-field="likedCount">点赞数</th>
+				      <th data-field="time">创建时间</th>
+				    </tr>
+				  </thead>
+				</table>
+				</div>
+			</div>
+		</div>
+		<footer>
+		  	<p>Design by <a href="# target="_blank">贰月小巷</a><span>&nbsp;&nbsp;&nbsp;蜀ICP备123232号-1</span></p>
+		</footer>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootsnav.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.js"></script>
+    <script type="text/javascript">
+    	 /*按enter搜索*/
+        $("#keyword").on('keypress',function(e) {
+                var keycode = e.keyCode;
+                var searchName = $(this).val();
+                if(keycode == 13) {
+                    e.preventDefault();
+                    //请求搜索接口
+                    alert(searchName);
+                    $(".top-search").slideUp();
+                }
+        });
+
+    </script>
+</html>
