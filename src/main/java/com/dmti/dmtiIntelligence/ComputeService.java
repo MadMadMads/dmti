@@ -6,7 +6,7 @@ package com.dmti.dmtiIntelligence;
  */
 public interface ComputeService {
     /**
-     *  统计歌单的
+     *  统计歌单的 标签
      * @return
      */
     Object computeBackData();

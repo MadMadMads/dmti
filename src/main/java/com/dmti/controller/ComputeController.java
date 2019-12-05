@@ -15,6 +15,7 @@ import java.util.Map;
  * @auther XuJun
  * @date 2019/11/11 10:44
  */
+@CrossOrigin
 @RestController
 public class ComputeController {
     @Resource
