@@ -63,8 +63,6 @@ public class ComputeServiceImpl implements ComputeService {
             if (time == null) {
                 continue;
             }
-//            String[] tagsAfter = new String[]{"00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"};
-//            2016 - 07 - 31 13:16:06
             String timeAfter = time.substring(11, time.length() - 6);
             if(totalcount<30)
                 System.out.println(timeAfter);
@@ -119,7 +117,6 @@ public class ComputeServiceImpl implements ComputeService {
         long endTimeCompute = System.currentTimeMillis();
         System.out.println((endTimeCompute - startTimeCompute) + "ms");
         System.out.println(totalcount);
-//        }while (dataList.size()==200);
         return map;
     }
 }
