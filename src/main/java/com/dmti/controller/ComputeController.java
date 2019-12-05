@@ -37,6 +37,7 @@ public class ComputeController {
         }
         return list;
     }
+
     @ResponseBody
     @RequestMapping("/computeCommentTime")
     public Object computeCommentTime() {
@@ -47,6 +48,7 @@ public class ComputeController {
         }
         return list;
     }
+
     @ResponseBody
     @RequestMapping("/computeUserAgesComment")
     public Object computeUserAgesComment() {
@@ -57,12 +59,32 @@ public class ComputeController {
         }
         return list;
     }
+
     @ResponseBody
     @GetMapping("/pageQueryComments")
-    public Object pageQueryComments(@RequestParam("offset") int offset,@RequestParam("limit") int limit) {
-        Integer count = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM t_comment",Integer.class);
-        List<Map<String,Object>> list = pageQueryService.pageQueryComments(offset,limit);
-        PageList pageList = new PageList(list,count,count);
+    public Object pageQueryComments(@RequestParam(name="offset",defaultValue = "1") int offset,@RequestParam(name = "limit",defaultValue = "100") int limit,@RequestParam(name="search",defaultValue = "") String search) {
+        PageList pageList = pageQueryService.pageQueryComments(offset,limit,search);
+        return pageList;
+    }
+
+    @ResponseBody
+    @GetMapping("/pageQueryHotSongs")
+    public Object pageQueryHotSongs(@RequestParam(name="offset",defaultValue = "1") int offset,@RequestParam(name = "limit",defaultValue = "100") int limit,@RequestParam(name="search",defaultValue = "") String search) {
+        PageList pageList = pageQueryService.pageQueryHotSongs(offset,limit,search);
+        return pageList;
+    }
+
+    @ResponseBody
+    @GetMapping("/playList")
+    public Object pageQueryPlayList(@RequestParam(name="offset",defaultValue = "1") int offset,@RequestParam(name = "limit",defaultValue = "100") int limit,@RequestParam(name="search",defaultValue = "") String search) {
+        PageList pageList = pageQueryService.pageQueryPlayList(offset,limit,search);
+        return pageList;
+    }
+
+    @ResponseBody
+    @GetMapping("/songs")
+    public Object pageQuerySongs(@RequestParam(name="offset",defaultValue = "1") int offset,@RequestParam(name = "limit",defaultValue = "100") int limit,@RequestParam(name="search",defaultValue = "") String search) {
+        PageList pageList = pageQueryService.pageQuerySongs(offset,limit,search);
         return pageList;
     }
 }

@@ -49,10 +49,12 @@
 	            <!-- Collect the nav links, forms, and other content for toggling -->
 	            <div class="collapse navbar-collapse" id="navbar-menu">
 	                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-	                    <li><a href="index.html">热门歌曲</a></li>
-	                    <li><a href="hotComment.html">热门评论</a></li>
-	                    <li><a href="playList.html">热门歌单</a></li>
-	                    <li><a href="songs.html">歌单歌曲</a></li>
+	                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        	 <li><a href="index.html">热门歌曲</a></li>
+                        	 <li><a href="hotComment.html">热门评论</a></li>
+                        	 <li><a href="palyList.html">热门歌单</a></li>
+                        	 <li><a href="songs.html">歌单歌曲</a></li>
+                        </ul>
 	                </ul>
 	            </div><!-- /.navbar-collapse -->
 	        </div>
@@ -90,7 +92,7 @@
     </script>
     <script type="text/javascript">
         $('#table').bootstrapTable({
-                    url: 'http://localhost:8080/pageQueryHotSongs',         //请求后台的URL
+                    url: 'http://localhost:8080/playList',         //请求后台的URL
                     method: 'get',                      //请求方式
                     //toolbar: '#toolbar',                //工具按钮用哪个容器
                     striped: true,                      //是否显示行间隔色
@@ -114,20 +116,20 @@
                     cardView: false,                    //是否显示详细视图
                     detailView: false,                   //是否显示父子表
                     columns: [{
-                        field: 'songID',
-                        title: '歌曲ID',
+                        field: 'id',
+                        title: '歌单ID',
                         align: 'left'
                     }, {
-                        field: 'songName',
-                        title: '歌曲名称',
+                        field: 'name',
+                        title: '歌单名称',
                         align: 'left'
                     }, {
-                        field: 'singerName',
-                        title: '歌手名称',
+                        field: 'tags',
+                        title: '歌单标签',
                         align: 'left'
                     }, {
-                        field: 'totcalComents',
-                        title: '评论数',
+                        field: '创建时间',
+                        title: '点赞数',
                         align: 'left'
                     }]
                 });

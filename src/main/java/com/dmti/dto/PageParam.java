@@ -1,12 +1,9 @@
 package com.dmti.dto;
 
 /**
- * @param <T> Page中记录的类型.
+ *  Page中记录的类型.
  */
-/**
- * 分页参数类
- * Created by lv on 16-5-12.
- */
+
 public class PageParam {
     /**
      * 起始页码

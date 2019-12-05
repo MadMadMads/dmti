@@ -65,7 +65,9 @@ public class Pagination extends JdbcDaoSupport {
         //计算结束行数
         setLastIndex();
         //装入结果集
-        setResultList(getJdbcTemplate().queryForList(getMySQLPageSQL(new StringBuilder(sql), pageParam), params));
+        String mySQLPageSQL = getMySQLPageSQL(new StringBuilder(sql), pageParam);
+        List<Map<String, Object>> maps = getJdbcTemplate().queryForList(mySQLPageSQL, params);
+        setResultList(maps);
     }
 
 
@@ -145,7 +147,11 @@ public class Pagination extends JdbcDaoSupport {
         if (currentPage > totalPages) {
             currentPage = totalPages;
         }
-        this.startIndex = (currentPage - 1) * pageSize;
+        int tt = currentPage - 1;
+        if (tt < 0){
+            tt = 0;
+        }
+        this.startIndex = tt * pageSize;
     }
 
     public int getLastIndex() {

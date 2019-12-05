@@ -90,7 +90,7 @@
     </script>
     <script type="text/javascript">
         $('#table').bootstrapTable({
-                    url: 'http://localhost:8080/pageQueryHotSongs',         //请求后台的URL
+                    url: 'http://localhost:8080/songs',         //请求后台的URL
                     method: 'get',                      //请求方式
                     //toolbar: '#toolbar',                //工具按钮用哪个容器
                     striped: true,                      //是否显示行间隔色
@@ -114,20 +114,24 @@
                     cardView: false,                    //是否显示详细视图
                     detailView: false,                   //是否显示父子表
                     columns: [{
-                        field: 'songID',
+                        field: 'songid',
                         title: '歌曲ID',
                         align: 'left'
                     }, {
-                        field: 'songName',
+                        field: 'songname',
                         title: '歌曲名称',
                         align: 'left'
                     }, {
-                        field: 'singerName',
+                        field: 'authorname',
                         title: '歌手名称',
                         align: 'left'
                     }, {
-                        field: 'totcalComents',
-                        title: '评论数',
+                        field: 'count',
+                        title: '点赞数',
+                        align: 'left'
+                    }, {
+                        field: 'name',
+                        title: '所属歌单',
                         align: 'left'
                     }]
                 });

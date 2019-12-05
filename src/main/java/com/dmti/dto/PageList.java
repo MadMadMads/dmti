@@ -12,10 +12,9 @@ public class PageList {
 
     public PageList() { }
 
-    public PageList(List<Map<String, Object>> rows, Integer total, Integer totalNotFiltered) {
+    public PageList(List<Map<String, Object>> rows, Integer total) {
         this.rows = rows;
         this.total = total;
-        this.totalNotFiltered = totalNotFiltered;
     }
 
     public List<Map<String, Object>> getRows() {
@@ -32,14 +31,6 @@ public class PageList {
 
     public void setTotal(Integer total) {
         this.total = total;
-    }
-
-    public Integer getTotalNotFiltered() {
-        return totalNotFiltered;
-    }
-
-    public void setTotalNotFiltered(Integer totalNotFiltered) {
-        this.totalNotFiltered = totalNotFiltered;
     }
 
 
