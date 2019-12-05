@@ -1,9 +1,5 @@
 package com.dmti.pojo;
 
-/**
- * @auther XuJun
- * @date 2019/12/5 16:48
- */
 public class Msg {
     /**
      * 0失败 1成功

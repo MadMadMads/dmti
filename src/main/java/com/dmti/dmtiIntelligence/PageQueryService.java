@@ -5,12 +5,6 @@ import com.dmti.dto.PageList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author: Luo
- * @description:
- * @time: 2019/12/4 17:55
- * Modified By:
- */
 public interface PageQueryService {
     /**
      * 分页查询评论信息

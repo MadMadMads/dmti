@@ -13,10 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @auther XuJun
- * @date 2019/11/11 10:44
- */
 @CrossOrigin(allowCredentials = "true", allowedHeaders = "*")
 @RestController
 public class ComputeController {

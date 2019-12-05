@@ -1,9 +1,5 @@
 package com.dmti.dmtiIntelligence;
 
-/**
- * @auther XuJun
- * @date 2019/11/11 10:43
- */
 public interface ComputeService {
     /**
      *  统计歌单的 标签

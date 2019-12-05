@@ -10,10 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @auther XuJun
- * @date 2019/11/11 10:44
- */
 @Service
 public class ComputeServiceImpl implements ComputeService {
     @Resource
