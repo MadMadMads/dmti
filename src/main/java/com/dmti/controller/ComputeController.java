@@ -3,11 +3,13 @@ package com.dmti.controller;
 import com.dmti.dmtiIntelligence.ComputeService;
 import com.dmti.dmtiIntelligence.PageQueryService;
 import com.dmti.dto.PageList;
+import com.dmti.pojo.CountPojo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,17 +30,32 @@ public class ComputeController {
     @ResponseBody
     @RequestMapping("/compute")
     public Object compute() {
-        return computeservice.computeBackData();
+        List<CountPojo> list = new ArrayList<>();
+        Map<String,Integer> map = (Map<String,Integer>)computeservice.computeBackData();
+        for(Map.Entry<String,Integer> entry:map.entrySet()){
+            list.add(new CountPojo(entry.getKey(),entry.getValue()));
+        }
+        return list;
     }
     @ResponseBody
     @RequestMapping("/computeCommentTime")
     public Object computeCommentTime() {
-        return computeservice.computeCommentTime();
+        List<CountPojo> list = new ArrayList<>();
+        Map<String,Integer> map = (Map<String,Integer>)computeservice.computeCommentTime();
+        for(Map.Entry<String,Integer> entry:map.entrySet()){
+            list.add(new CountPojo(entry.getKey(),entry.getValue()));
+        }
+        return list;
     }
     @ResponseBody
     @RequestMapping("/computeUserAgesComment")
     public Object computeUserAgesComment() {
-        return computeservice.computeUserAgesComment();
+        List<CountPojo> list = new ArrayList<>();
+        Map<String,Integer> map = (Map<String,Integer>)computeservice.computeUserAgesComment();
+        for(Map.Entry<String,Integer> entry:map.entrySet()){
+            list.add(new CountPojo(entry.getKey(),entry.getValue()));
+        }
+        return list;
     }
     @ResponseBody
     @GetMapping("/pageQueryComments")
