@@ -14,6 +14,8 @@ public class Msg {
      */
     private Object data;
 
+    private String msg;
+
     public Msg() {
     }
 
@@ -33,10 +35,25 @@ public class Msg {
         this.data = data;
     }
 
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public Msg(int status, Object data, String msg) {
+        this.status = status;
+        this.data = data;
+        this.msg = msg;
+    }
+
     public Msg(int status, Object data) {
         this.status = status;
         this.data = data;
     }
+
     public Msg(int status) {
         this.status = status;
     }

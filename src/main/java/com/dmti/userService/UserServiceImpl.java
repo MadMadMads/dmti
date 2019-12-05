@@ -33,4 +33,13 @@ public class UserServiceImpl implements UserService {
         }
         return new Msg(0);
     }
+
+    @Override
+    public Object updatePassword(User user) {
+        String sql = "UPDATE sys_user SET `password` = "+user.getPassword()+" WHERE id = "+user.getId();
+        if (jdbctemplate.update(sql) != 0) {
+            return new Msg(1);
+        }
+        return new Msg(0);
+    }
 }
