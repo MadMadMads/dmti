@@ -50,5 +50,8 @@ public class User {
         this.password = password;
         this.nickname = nickname;
     }
-
+    public User(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
 }
