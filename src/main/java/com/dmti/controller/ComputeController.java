@@ -17,7 +17,7 @@ import java.util.Map;
  * @auther XuJun
  * @date 2019/11/11 10:44
  */
-@CrossOrigin
+@CrossOrigin(allowCredentials = "true", allowedHeaders = "*")
 @RestController
 public class ComputeController {
     @Resource
